@@ -2,7 +2,8 @@ from setuptools import find_packages, setup
 
 
 install_requires = [
-    "wagtail>=4.0,<6.0",
+    "wagtail>=6.0",
+    "wagtail_modeladmin>=2.0.0",
     "selenium>=3.141.0,<3.142.0",
 ]
 
@@ -17,7 +18,6 @@ tests_require = [
     "pycodestyle",
     "pytest-cov",
     "pytest-django",
-    "pytest-pythonpath",
     "pytest-randomly",
     "pytest-sugar",
     "pytest",
@@ -26,7 +26,7 @@ tests_require = [
 
 docs_require = ["sphinx>=2.4.0"]
 
-with open('README.md') as fh:
+with open("README.md") as fh:
     long_description = fh.read()
 
 setup(
@@ -44,25 +44,18 @@ setup(
     include_package_data=True,
     license="BSD 3-Clause",
     long_description=long_description,
-    long_description_content_type='text/markdown',
+    long_description_content_type="text/markdown",
     classifiers=[
         "Development Status :: 4 - Beta",
         "Environment :: Web Environment",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",
-        "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: 3.8",
-        "Programming Language :: Python :: 3.9",
-        "Programming Language :: Python :: 3.10",
-        "Framework :: Django :: 2.2",
-        "Framework :: Django :: 3.0",
-        "Framework :: Django :: 3.1",
-        "Framework :: Django :: 3.2",
+        "Programming Language :: Python :: 3.11",
         "Framework :: Django :: 4.0",
-        "Framework :: Wagtail :: 2",
-        "Framework :: Wagtail :: 3",
-        "Framework :: Wagtail :: 4",
+        "Framework :: Django :: 5.0",
+        "Framework :: Wagtail :: 5",
+        "Framework :: Wagtail :: 6",
+        "Framework :: Wagtail :: 7",
     ],
 )

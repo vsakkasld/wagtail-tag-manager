@@ -1,13 +1,13 @@
 import django
+from wagtail import hooks
 from django.conf import settings
 from django.urls import path, reverse
-from wagtail import hooks
 from django.utils.html import mark_safe
 from wagtail.admin.menu import AdminOnlyMenuItem
 from wagtail.admin.site_summary import SummaryItem
 from wagtail.admin.views.reports import ReportView
 from django.template.defaultfilters import truncatechars
-from wagtail.contrib.modeladmin.options import (
+from wagtail_modeladmin.options import (
     ModelAdmin,
     ModelAdminGroup,
     modeladmin_register,
@@ -176,6 +176,7 @@ class TagManagerAdminGroup(ModelAdminGroup):
 
 modeladmin_register(TagManagerAdminGroup)
 
+
 # Reports
 class CookieConsentReportView(ReportView):
     header_icon = "success"
@@ -192,7 +193,7 @@ def register_unpublished_changes_report_menu_item():
     return AdminOnlyMenuItem(
         _("Cookie consents"),
         reverse("cookie_consent_report"),
-        classnames="icon icon-" + CookieConsentReportView.header_icon,
+        classname="icon icon-" + CookieConsentReportView.header_icon,
         order=700,
     )
 
@@ -229,9 +230,7 @@ class ModelCountSummaryItem(SummaryItem):
                     <span>{2}</span> {3}
                 </a>
             </li>
-            """.format(
-                self.icon, target_url, count, self.title
-            )
+            """.format(self.icon, target_url, count, self.title)
         )
 
 
